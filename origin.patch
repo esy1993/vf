@@ -1,0 +1,613 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1680862854491)
++++ b/.idea/compiler.xml	(date 1680862854491)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <excludeFromCompile>
++      <file url="file://$PROJECT_DIR$/src/main/java/PageObjectModel/AbstractClass.java" />
++    </excludeFromCompile>
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="vf" />
++      </profile>
++    </annotationProcessing>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1680861953713)
++++ b/.idea/vcs.xml	(date 1680861953713)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1680704070776)
++++ b/.idea/jarRepositories.xml	(date 1680704070776)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1680704050334)
++++ b/.idea/misc.xml	(date 1680704050334)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1680704060085)
++++ b/.idea/.gitignore	(date 1680704060085)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: src/test/java/vf.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/vf.feature b/src/test/java/vf.feature
+new file mode 100644
+--- /dev/null	(date 1680844706615)
++++ b/src/test/java/vf.feature	(date 1680844706615)
+@@ -0,0 +1,18 @@
++Feature: Bireysel  Kredi Hesapla Test
++
++  Scenario Outline: Go to vakifbank website and Kredi Hesapla
++    Given Vakifbank sitesine git
++    And Bireysel tabina tikla
++    And Bireysel Krediler sekmesine tikla
++    When Hesaplama Araçları linkinin var oldugunu kontrol et
++    Then Hesaplama Araçları linkine tıkla
++    When Kredi Hesaplama Aracı alanını ekranda kontrol et
++    Then Kredi Hesaplama Aracı alanındaki Hesapla butonuna tıkla
++    And Kredi dropboxına tıkla
++    And TAKSİTLİ EK HESAP seç
++    And Vade Alanı  Gir
++    And Tutar alanını ayarla
++    And Hesapla butonuna tıkla
++    When Toplam Ödenecek Tutar alanı  kontrol et
++    Then Basarılı sonuc olmalı
++    Examples:
+\ No newline at end of file
+Index: src/test/java/vfProje/Stepdefs.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/vfProje/Stepdefs.java b/src/test/java/vfProje/Stepdefs.java
+new file mode 100644
+--- /dev/null	(date 1680849086372)
++++ b/src/test/java/vfProje/Stepdefs.java	(date 1680849086372)
+@@ -0,0 +1,69 @@
++package vfProje;
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.chrome.ChromeDriver;
++
++public class Stepdefs
++
++{
++    @Given("Vakifbank sitesine git")
++    public void vakifbankSitesineGit() {
++
++
++    }
++
++    @And("Bireysel tabina tikla")
++    public void bireyselTabinaTikla() {
++    }
++
++    @And("Bireysel Krediler sekmesine tikla")
++    public void bireyselKredilerSekmesineTikla() {
++    }
++
++    @When("Hesaplama Araçları linkinin var oldugunu kontrol et")
++    public void hesaplamaAraclarıLinkininVarOldugunuKontrolEt() {
++    }
++
++    @Then("Hesaplama Araçları linkine tıkla")
++    public void hesaplamaAraclarıLinkineTıkla() {
++    }
++
++    @When("Kredi Hesaplama Aracı alanını ekranda kontrol et")
++    public void krediHesaplamaAracıAlanınıEkrandaKontrolEt() {
++    }
++
++    @Then("Kredi Hesaplama Aracı alanındaki Hesapla butonuna tıkla")
++    public void krediHesaplamaAracıAlanındakiHesaplaButonunaTıkla() {
++    }
++
++    @And("Kredi dropboxına tıkla")
++    public void krediDropboxınaTıkla() {
++    }
++
++    @And("TAKSİTLİ EK HESAP seç")
++    public void taksitliEKHESAPSec() {
++    }
++
++    @And("Vade Alanı  Gir")
++    public void vadeAlanıGir() {
++    }
++
++    @And("Tutar alanını ayarla")
++    public void tutarAlanınıAyarla() {
++    }
++
++    @And("Hesapla butonuna tıkla")
++    public void hesaplaButonunaTıkla() {
++    }
++
++    @When("Toplam Ödenecek Tutar alanı  kontrol et")
++    public void toplamOdenecekTutarAlanıKontrolEt() {
++    }
++
++    @Then("Basarılı sonuc olmalı")
++    public void basarılıSonucOlmalı() {
++    }
++}
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+--- /dev/null	(date 1680854909165)
++++ b/pom.xml	(date 1680854909165)
+@@ -0,0 +1,72 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>org.example</groupId>
++    <artifactId>vf</artifactId>
++    <version>1.0-SNAPSHOT</version>
++
++    <properties>
++        <maven.compiler.source>17</maven.compiler.source>
++        <maven.compiler.target>17</maven.compiler.target>
++    </properties>
++
++<dependencies>
++
++    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
++    <dependency>
++        <groupId>org.seleniumhq.selenium</groupId>
++        <artifactId>selenium-java</artifactId>
++        <version>4.8.1</version>
++    </dependency>
++
++
++    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
++    <dependency>
++        <groupId>io.github.bonigarcia</groupId>
++        <artifactId>webdrivermanager</artifactId>
++        <version>5.3.0</version>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
++    <dependency>
++        <groupId>io.cucumber</groupId>
++        <artifactId>cucumber-java</artifactId>
++        <version>7.11.0</version>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
++    <dependency>
++        <groupId>info.cukes</groupId>
++        <artifactId>cucumber-java</artifactId>
++        <version>1.2.5</version>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
++    <dependency>
++        <groupId>io.cucumber</groupId>
++        <artifactId>cucumber-testng</artifactId>
++        <version>7.11.0</version>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
++    <dependency>
++        <groupId>info.cukes</groupId>
++        <artifactId>cucumber-testng</artifactId>
++        <version>1.2.5</version>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
++    <dependency>
++        <groupId>info.cukes</groupId>
++        <artifactId>cucumber-junit</artifactId>
++        <version>1.2.5</version>
++        <scope>test</scope>
++    </dependency>
++    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
++    <dependency>
++        <groupId>org.testng</groupId>
++        <artifactId>testng</artifactId>
++        <version>7.7.1</version>
++        <scope>test</scope>
++    </dependency>
++
++</dependencies>
++</project>
+\ No newline at end of file
+Index: src/test/java/Base/Kredi_Hesapla.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Base/Kredi_Hesapla.java b/src/test/java/Base/Kredi_Hesapla.java
+new file mode 100644
+--- /dev/null	(date 1680854851082)
++++ b/src/test/java/Base/Kredi_Hesapla.java	(date 1680854851082)
+@@ -0,0 +1,58 @@
++package Base;
++
++import org.junit.Test;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.support.ui.Select;
++
++public class Kredi_Hesapla {
++
++
++        public static void main(String[] args) {
++
++
++            System.setProperty("Webdriver.chrome.driver","C:\\Users\\amdocseyoruk\\Desktop\\deneme\\chromedriver_win32\\chromedriver.exe");
++    String anasayfa="http://www.vakifbank.com.tr";
++
++            WebDriver driver =new ChromeDriver();
++            driver.manage().window().maximize();
++            driver.get(anasayfa);
++            try {
++                Thread.sleep(5000);
++            } catch (InterruptedException e) {
++                throw new RuntimeException(e);
++            }
++            driver.quit();
++            driver.findElement(By.xpath("//*[@id='ctl00_ctl06_ctl00_rptMenu_ctl00_hypLink']")).click();
++            driver.findElement(By.xpath("//*[@id='ctl00_ctl06_ctl00_rptMenu_ctl03_hypLink']")).click();
++            driver.findElement(By.xpath("//a[@href='/hesaplama-araclari.aspx?pageID=784']")).click();
++
++            driver.findElement(By.linkText("Hesapla")).click();
++
++            Select drpKredi = new Select(driver.findElement(By.name("Kredi:")));
++            drpKredi.selectByVisibleText("TAKSİTLİ EK KREDİ");
++            drpKredi.selectByValue("0-55500523");
++
++            WebElement Vade =driver.findElement(By.id("//*[@id='ctl00_ctl10_ctl00_txtVade']"));
++            Vade.sendKeys("10");
++             driver.findElement(By.id("//*[@id='ctl00_ctl10_ctl00_ajaxPanel']/div[3]/div[2]/div/div[1]/span']")).click();
++              driver.findElement(By.xpath("//*[@id='ctl00_ctl10_ctl00_btnHesapla']")).click();
++
++              String borderRight="211.94";
++
++            if ((driver.findElement(By.xpath("//*[@id='ctl00_ctl10_ctl00_btnHesapla']")).equals(borderRight)))
++            {
++               System.out.println("Hesaplama Başarılı");
++            }
++            else {
++                System.out.println("Toplam ödenecek Tutar yanlış");
++            }
++
++        }
++
++    }
++
++
++
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1680707276360)
++++ b/.idea/uiDesigner.xml	(date 1680707276360)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/lib.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/lib.xml b/.idea/libraries/lib.xml
+new file mode 100644
+--- /dev/null	(date 1680707623160)
++++ b/.idea/libraries/lib.xml	(date 1680707623160)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="lib">
++    <CLASSES>
++      <root url="file://$PROJECT_DIR$/../selenium-java-4.8.3/lib" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++    <jarDirectory url="file://$PROJECT_DIR$/../selenium-java-4.8.3/lib" recursive="false" />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/selenium_java_4_8.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/selenium_java_4_8.xml b/.idea/libraries/selenium_java_4_8.xml
+new file mode 100644
+--- /dev/null	(date 1680707623166)
++++ b/.idea/libraries/selenium_java_4_8.xml	(date 1680707623166)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="selenium-java-4.8">
++    <CLASSES>
++      <root url="file://$PROJECT_DIR$/../selenium-java-4.8.3" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES>
++      <root url="file://$PROJECT_DIR$/../selenium-java-4.8.3" />
++    </SOURCES>
++    <jarDirectory url="file://$PROJECT_DIR$/../selenium-java-4.8.3" recursive="false" />
++    <jarDirectory url="file://$PROJECT_DIR$/../selenium-java-4.8.3" recursive="false" type="SOURCES" />
++  </library>
++</component>
+\ No newline at end of file
+diff --git a/target/test-classes/vfProje/Stepdefs.class b/target/test-classes/vfProje/Stepdefs.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..6410e749c1e5cc87227b28547406aff8a734b9f9
+GIT binary patch
+literal 2377
+zc$|flTT|0O6vsDQ<t7NFT!rPLaxW^*IEs!%D$KNF8I!5c+hn0j(hajoI`T#Q3cS)M
+zXMFI5KKY>>Pc}&@TDqM!|LmSUzjOBN>Hhxn^A|$s9eOc{x=?pN>KR78s82&<=cGn5
+z4&i5+V)>k!zJ~ht8E5``4Rx=rm-^8ISX4Vb5$-w7=svx$=&7fno{z3YH8fgaoPG|f
+zWhx9(c3@__;F`oK5y8T7JlW${m>1gq1-;c!szz*fS|;4qnNL079Wlsa=1ahRR;4B8
+zF<@jlcYWeBmjh?6z}$=(m@;lg?tt>l5vx%Sz}^~h0tlKeC1C8uWPBE)C(2CFOOHB`
+z9pl7cwnHFbTWFSBfSf#tJ+Lobupjv>B&58c7IUc3sa=(kV(3!SF<F7VWJv<qsZftx
+zIHXFlf|w2wjXG4-hC|>`#-d{dX8{lLF877&<RJgqwwZpd$lbp>PG}f#H&>E}ofwE~
+zL|`{YVmo4D3ed&-vY<wzF7s?3)`-HcbO;MOjS<^+ScT)(NR4_Hy01}(Z_XBkTcl;D
+zFJ;y69X5DilDJ?R`P|vcUWX_a^h9hq2z-|ZaQ<;}Z#oAHJrg4?$G**-rDe=R;a-&8
+zZ?L*aosOv1t)=NR?h_k2(_y*%aZb;k=+uPuMmDcEu8l(D8t3v@8lY!xt~4}KBNmPJ
+zal{1tElV)Q(FDeFD&+@05zUHbFNu)Z8R2wG*+^`dthBGi)V&*B_T8{LMT>H3QrozV
+z*K%&_hFpYizQ@aOYXbPrX{F1=3!BAh)O84D7M&`Acc{cc(}2Cu0*xD+26Z<OCjG?1
+z%Vi|FOm@PaL`$e2uDI|sinQ>OgXaK@GN2l0@5T?L)#0TJ4Z^ceP7a_Ucn(JkKu16|
+z^bo9F(s@&k(f^KPEsk33I10ZZ7>&X2k%z`XCe)-<2U02`O@gG=q-iy23S?SMn(siG
+ziAb{`b7~UqK$?$8k3kmHq*ZlJiy&A{T2tq=1hT9qZK*510<x+m?W##nK%S~eduq}%
+pkTo^wwVJdJvY{sJt4W(6TWZn=br)=d?5IhH>MjVcj$P^Y{4aMq?B)Of
+
+diff --git a/target/test-classes/Base/Kredi_Hesapla.class b/target/test-classes/Base/Kredi_Hesapla.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..dc225d352ae76178c025be9d1173121d048e49f3
+GIT binary patch
+literal 3089
+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
+
